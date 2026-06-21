@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #fde7d9 0%, #fad6c0 40%, #fbeee6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      color: #3f2c1b;
+      padding: 2rem 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(135deg, #ffc8a2, #ffb185);
+      border-radius: 38px 38px 28px 28px;
+      padding: 3.5rem 2.2rem 2.8rem;
+      text-align: center;
+      box-shadow: 0 18px 30px -10px rgba(180, 90, 40, 0.20);
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #26180e;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.15rem;
+      color: #4e3321;
+      background: rgba(255, 245, 235, 0.45);
+      display: inline-block;
+      padding: 0.3rem 1.6rem;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 1.6rem auto 0.6rem;
+      font-size: 1.04rem;
+      color: #2f1f13;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 22px rgba(150, 80, 40, 0.06);
+      border: 1px solid rgba(255, 235, 220, 0.7);
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(170, 90, 50, 0.08);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      border-left: 6px solid #e5855e;
+      padding-left: 0.9rem;
+      color: #2e1d10;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #613f29;
+      margin-top: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+      margin-top: 0.8rem;
+    }
+
+    .benefit-item {
+      background: #fcf5ef;
+      border-radius: 20px;
+      padding: 1.2rem 1.2rem 0.9rem;
+      border: 1px solid #f2ddd0;
+    }
+
+    .benefit-item .num {
+      display: inline-block;
+      background: #e28b61;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      line-height: 1.8rem;
+      text-align: center;
+      border-radius: 30px;
+      margin-bottom: 0.35rem;
+    }
+
+    .benefit-item p {
+      font-size: 0.95rem;
+      color: #4b3525;
+    }
+
+    .desc-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem 2rem;
+    }
+
+    .desc-flex .col {
+      flex: 1 1 200px;
+    }
+
+    .desc-flex .col p {
+      margin-bottom: 0.6rem;
+      font-size: 0.97rem;
+    }
+
+    .faq-short {
+      background: #faf1ea;
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
+    }
+
+    .faq-short details {
+      margin-bottom: 0.3rem;
+      border-bottom: 1px solid #edd9ca;
+      padding: 0.6rem 0;
+    }
+
+    .faq-short details:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-short summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #3b2a1b;
+      padding: 0.1rem 0;
+    }
+
+    .faq-short summary::marker {
+      color: #b2704e;
+    }
+
+    .faq-short .answer {
+      padding: 0.5rem 0.6rem 0.3rem 1.4rem;
+      color: #4d3625;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 1.8rem;
+      background: #ffffffd9;
+      border-radius: 40px;
+      padding: 1.4rem 2rem;
+      margin-top: 0.8rem;
+      border: 1px solid #fadbca;
+    }
+
+    .footer-links .copy {
+      font-size: 0.9rem;
+      color: #5b4433;
+    }
+
+    .footer-links a {
+      color: #894f2e;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 30px;
+      padding: 0.3rem 1rem;
+      background: #ffefe5;
+      transition: background 0.2s, color 0.2s;
+      font-size: 0.98rem;
+    }
+
+    .footer-links a:hover {
+      background: #d9895f;
+      color: white;
+    }
+
+    .footer-links .main-link {
+      background: #e28b61;
+      color: white;
+      padding: 0.4rem 1.5rem;
+    }
+
+    .footer-links .main-link:hover {
+      background: #cb7a4f;
+    }
+
+    .fine-print {
+      text-align: center;
+      margin-top: 1.8rem;
+      font-size: 0.82rem;
+      color: #7f6049;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.9rem;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .hero {
+        padding: 2.5rem 1.2rem 2rem;
+      }
+      .card {
+        padding: 1.6rem 1.2rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .footer-links {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- hero -->
+    <section class="hero">
+      <h1>华体会</h1>
+      <span class="tagline">｜ 真实体验 · 日常陪伴</span>
+      <p>一个让信息与互动更贴近生活的站点，不堆砌术语，只在意你用得顺不顺手。从内容浏览到轻量交流，我们试着把每一步都做得更直接一些。</p>
+    </section>
+
+    <!-- 优势区：为什么选它 -->
+    <section class="card">
+      <h2>几个实在的理由</h2>
+      <div class="grid-2">
+        <div class="benefit-item">
+          <span class="num">1</span>
+          <h3>界面轻简</h3>
+          <p>没有眼花缭乱的弹窗，不刻意制造焦虑。每一个按钮和入口都经过考量，让你花更少时间找路。</p>
+        </div>
+        <div class="benefit-item">
+          <span class="num">2</span>
+          <h3>内容有温度</h3>
+          <p>无论是普通浏览还是深度阅读，这里的表达都偏向自然口语，读起来不累。我们不追求夸张，只希望每段文字都有它的位置。</p>
+        </div>
+        <div class="benefit-item">
+          <span class="num">3</span>
+          <h3>反馈很及时</h3>
+          <p>页面响应、交互反馈都保持在合理节奏，不让你在等待中消磨耐心。技术服务于体验，而不是相反。</p>
+        </div>
+        <div class="benefit-item">
+          <span class="num">4</span>
+          <h3>持续打磨</h3>
+          <p>小步迭代，根据真实使用习惯不断调整细节。没有「完美版」，只有越来越贴近你的版本。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 说明区 + 场景 -->
+    <section class="card">
+      <h2>站点说明 & 使用场景</h2>
+      <div class="desc-flex">
+        <div class="col">
+          <p><strong>华体会</strong> 定位为一个轻量级的综合信息与交流站点。这里不搞虚的，所有功能都围绕「日常实用」展开：看看新鲜资讯、参与有意义的讨论、或者单纯找点有意思的内容。</p>
+          <p>站内所有模块都基于通用 web 标准搭建，兼容主流浏览器和设备。无论你是在电脑前，还是用手机随手打开，版式都会自动适配。</p>
+        </div>
+        <div class="col">
+          <p>你可以在这些场景下打开它：通勤路上刷几条动态、午休时翻翻推荐内容、或者晚间安静地读一篇短文。没有任何强制注册或信息轰炸，你完全可以按自己的节奏来。</p>
+          <p>如果你对某个话题感兴趣，也可以直接通过站内渠道发起讨论。我们相信好的交流来自轻松的语境。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="card">
+      <h2>常见疑问摘要</h2>
+      <div class="faq-short">
+        <details>
+          <summary>华体会需要注册才能用吗？</summary>
+          <div class="answer">大部分内容无需注册即可浏览。部分互动功能（如评论或收藏）会建议你创建一个轻量账户，过程很快，只需要昵称和邮箱。</div>
+        </details>
+        <details>
+          <summary>内容来源是哪里？</summary>
+          <div class="answer">内容由编辑团队与社区用户共同贡献。我们会对推荐内容做基本核验，但不做绝对化承诺。如果你发现存疑的信息，欢迎反馈。</div>
+        </details>
+        <details>
+          <summary>移动端体验如何？</summary>
+          <div class="answer">站点采用响应式设计，在手机和平板上都有良好表现。按钮大小、间距都针对触控做了优化，你也可以横屏使用。</div>
+        </details>
+        <details>
+          <summary>我想了解站点背后的理念</summary>
+          <div class="answer">简单来说就是：少一点干扰，多一点真诚。我们更愿意把精力放在内容质量和交互直觉上，而不是堆砌功能。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+      <span class="copy">© 华体会 · 保持开放</span>
+      <span>了解更多，欢迎前往 <a href="https://page--hth.com" class="main-link">华体会</a> 页面</span>
+    </div>
+
+    <div class="fine-print">
+      本页为介绍性落地页，所描述内容均基于站点实际功能与风格，不构成任何承诺或保证。
+    </div>
+  </div>
+</body>
+</html>
